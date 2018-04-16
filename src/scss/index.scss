@@ -1,0 +1,263 @@
+@import './reset.scss';
+@import './variables/variables.scss';
+// @import './components/_components.scss';
+// @import './navigation/_navigation.scss';
+
+
+$color-selected : rgba(255, 153, 0, 0.7 );
+
+
+body, html {
+
+    width : 100%;
+    height : 100%;
+    margin : 0;
+    padding : 0;
+    background : #202020;
+    color : $color-font-light;
+    overflow : hidden;
+}
+
+*
+{
+    box-sizing : border-box;
+}
+#app
+{
+    width : 100%;
+    height : 100%;
+}
+
+@import './text-input.scss';
+// @import './animation-settings.scss';
+@import './animation.scss';
+// @import './animator.scss';
+// @import './asset-list.scss';
+
+@import './timeline.scss';
+
+.app-layout
+{
+    width : 100%;
+    height : 100%;
+    position : relative;
+    display : flex;
+    flex-direction : column;
+    box-sizing : border-box;
+    padding : 2px;
+
+    .uppersection
+    {
+        flex : 1;
+        width : 100%;
+        position : relative;
+        display : flex;
+
+        .animation
+        {
+            width : auto;
+            flex : 1;
+        }
+
+        .side-panel
+        {
+            width : 30%;
+            max-width : 250px;
+            display : flex;
+            flex-direction : column;
+
+            .window
+            {
+                flex : 1;
+
+                &.collapsed
+                {
+                    flex : 0;
+                }
+            }
+        }
+    }
+
+    .timeline
+    {
+        width   : 100%;
+        height : 200px;
+    }
+}
+
+
+.selected
+{
+    background : $color-selected;
+}
+
+
+.library-search
+{
+    width : 100%;
+    margin : 5px auto;        
+}
+
+.library-assets
+{
+    width : 100%;
+    height : 100%;
+    position : relative;
+    overflow : auto;
+
+    .library-asset
+    {
+        width : 100%;
+        padding : 2px;
+        display : flex;
+        align-items : center;
+        border-bottom : 1px solid #404040;
+
+        .asset-thumbnail
+        {
+            width : 36px;
+            height : 36px;
+            background : #454545;
+            position : relative;
+
+            img
+            {
+                max-width : 100%;
+                max-height : 100%;
+                position : absolute;
+                top : 50%;
+                left : 50%;
+                transform : translate(-50%, -50%);
+            }
+        }
+
+        .asset-name
+        {
+            flex : 1;
+            padding-left : 10px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow : hidden;
+        }
+
+        &.selected
+        {
+            background : #f55500;
+        }
+    }
+}
+
+
+
+.window
+{
+    background : #505050;
+    color : #cccccc;
+    box-sizing : border-box;
+    position : relative;
+    border : 2px solid #202020;
+    display : flex;
+    flex-direction : column;
+    // height : 100%;
+
+    .window-title
+    {
+        flex : 0;
+        width : 100%;
+        position : relative;
+        padding : 5px 10px;
+        border-bottom : 1px solid #404040;
+    }
+
+    .window-content
+    {
+        flex : 1;
+        width : 100%;
+        position : relative;
+        display : flex;
+        flex-direction : column;
+    }
+
+    .window-footer
+    {
+        width : 100%;
+        min-height : 30px;
+        position : relative;
+        border-top : 1px solid #404040;
+    }
+
+    .window-section
+    {
+        width : 100%;
+        padding : 10px;
+        position : relative;
+        margin : 2px auto;
+        border : 1px solid #404040;
+
+        &.flex
+        {
+            flex : 1 1 auto;
+            height : 0;
+        }
+
+    }
+}
+
+
+
+.footer-nav
+{
+    width : 100%;
+    padding : 10px 0;
+}
+
+button {
+    background : #707070;
+    cursor : pointer;
+    border : none;
+    text-align : center;
+    padding : 5px 10px;
+    color : #202020;
+
+    &:hover
+    {
+        background : #909090;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #909090; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #606060; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+input
+{
+    width : 100%;
+    background : #454545;
+    border : none;
+    
+
+    &[type="color"]
+    {   
+        height : 100%;
+        height : 32px;
+        background : transparent;
+        padding : 0;
+        -webkit-appearance: none;
+    }
+}

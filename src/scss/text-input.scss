@@ -1,0 +1,25 @@
+.text-input
+{
+    width : 100%;
+    display : flex;
+    align-content: center;
+    align-items: center;
+
+    .label
+    {
+        width : 30%;
+        flex  : 0 0 30%;
+    }
+
+    input
+    {
+        flex        : 1;
+        padding     : 5px;
+        box-sizing  : border-box;
+
+        &[type="checkbox"]
+        {
+            flex : 0 0 16px;
+        }
+    }
+}

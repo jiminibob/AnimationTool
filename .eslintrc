@@ -1,0 +1,40 @@
+{
+    "extends": [
+         "eslint:recommended", 
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "shared-node-browser": true,
+        "node": true,
+        "commonjs":true,
+        "es6":true,
+        "jquery":true,
+        "amd":true
+    },
+    "parserOptions": {
+         "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true,
+            "jsx": true,
+            "arrowFunctions": true,
+            "restParams": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "settings": {
+        "import/resolver": "webpack"
+    },
+    "rules": {
+
+        "no-console" : 0,
+        "no-unused-vars" : 0,
+        "react/prop-types" : 0
+
+    },
+    "globals": {
+        "__DEBUG__": true
+    }
+}
